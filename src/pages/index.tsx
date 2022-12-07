@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { ResetCSS } from '../global/styles/resetCSS';
 import { THEME } from '../global/styles/theme';
 import { useEffect } from 'react';
+import Header from '../../components/Header';
 
 const baseURL = 'http://gateway.marvel.com/v1/public/characters?';
 
@@ -32,7 +33,7 @@ export default function Home() {
       </Head>
       <ThemeProvider theme={THEME}>
         <ResetCSS />
-        <h1>Hello World</h1>
+        <Header />
       </ThemeProvider>
     </>
   )
