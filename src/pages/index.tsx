@@ -1,9 +1,28 @@
 import Head from 'next/head';
+import axios from 'axios';
+import md5 from 'md5'
 import { ThemeProvider } from 'styled-components';
 import { ResetCSS } from '../global/styles/resetCSS';
 import { THEME } from '../global/styles/theme';
+import { useEffect } from 'react';
+
+const baseURL = 'http://gateway.marvel.com/v1/public/characters?';
+
+const publicKey = 'cb2779f0141e2cb6c501d16d11506d1a';
+const privateKey = '8e7fd902aaed64859d0bc821596621aea13cc140';
+
+const time = Number(new Date());
+
+const hash = md5(time + privateKey + publicKey);
 
 export default function Home() {
+
+  useEffect (() => {
+    axios.get(`${baseURL}ts=${time}&apikey=${publicKey}&hash=${hash}`)
+    .then(response => console.log(response.data.data)
+    )
+  }, [])
+
   return (
     <>
       <Head>
