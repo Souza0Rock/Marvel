@@ -23,9 +23,15 @@ export const ResetCSS = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     list-style: none;
+    border: none;
   }
 
   button {
     cursor: pointer;
   }
+
+  textarea:focus, input:focus {
+    box-shadow: 0;
+    outline: 0;
+}
 `
