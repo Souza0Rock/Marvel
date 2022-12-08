@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const Container = styled.header `
-    padding: 0 2%;
+    padding: 0 4%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #615772;
 `;
 
-export const RouterGitHub = styled.h1 `
-    color: #f2f5f7;
+export const RouterGitHub = styled.img `
+    width: 20%;
 `;
 
 export const Li = styled.li `
@@ -20,7 +21,7 @@ export const Li = styled.li `
 
 export const Logo = styled.img `
     width: 20%;
-    margin-right: 8%;
+    margin-right: 13%;
 `;
 
 export const divForm = styled.div `
