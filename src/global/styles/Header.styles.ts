@@ -6,6 +6,17 @@ export const Container = styled.header `
     justify-content: space-between;
     align-items: center;
     background-color: #615772;
+    box-shadow: 0 0 20px 3px;
+
+    > svg {
+        /* position: fixed; */
+        color: #f2f5f7;
+        width: 30px;
+        height: 30px;
+        margin-top: 32px;
+        margin-left: 32px;
+        cursor: pointer;
+    }
 `;
 
 export const RouterGitHub = styled.img `

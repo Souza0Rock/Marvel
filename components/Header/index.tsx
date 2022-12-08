@@ -1,26 +1,26 @@
-import Link from "next/link";
-import React, { Fragment } from "react";
-import SectionMenuNavHeader from "../SectionMenuNavHeader";
+import React, { useState } from "react";
 import * as S from '../../src/global/styles/Header.styles';
+import { FaBars } from "react-icons/fa"
+import Sidebar from "../Sidebar";
 
-export default function Header () {
+const Header = ({sidebar, setSidebar}: any) => {
+
+    const showSidebar = () => setSidebar(!sidebar)
+
     return (
-        <Fragment>
-            <S.Container>
-                <Link href="https://github.com/Souza0Rock" target="_blank">
-                    <S.RouterGitHub src='/images/github.png'
-                    alt="conheça o desenvolvedor" />
-                </Link>
-                <S.Logo src='/images/logo.png'
-                alt="Logo da Marvel" />
-                <S.divForm>
-                    <S.Input 
-                    type={"text"}
-                    placeholder={"search"}/>
-                    <S.Button />
-                </S.divForm>
-            </S.Container>
-            <SectionMenuNavHeader />
-        </Fragment>
+        <S.Container>
+            <FaBars onClick={showSidebar} />
+            {sidebar && <Sidebar active={setSidebar} />}
+            <S.Logo src='/images/logo.png'
+            alt="Logo da Marvel" />
+            <S.divForm>
+                <S.Input 
+                type={"text"}
+                placeholder={"search"}/>
+                <S.Button />
+            </S.divForm>
+        </S.Container>
     )
 }
+
+export default Header

@@ -6,6 +6,7 @@ export const ResetCSS = createGlobalStyle`
   }
 
   body {
+    min-height: 100vh;
     background-color: ${({ theme }) => theme.colors.dark_800 };
   }
 
