@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as S from '../../src/global/styles/Header.styles';
+import * as S from './styles';
 import { FaBars } from "react-icons/fa"
 import Sidebar from "../Sidebar";
 

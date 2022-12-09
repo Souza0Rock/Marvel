@@ -10,6 +10,7 @@ import Header from '../../components/Header';
 export default function Home() {
 
   const ref = useRef(null)
+
   const closeSidebar = (event: any) => {
     //@ts-ignore
     if (ref.current && !ref.current.contains(event.target)) {

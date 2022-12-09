@@ -13,8 +13,8 @@ export const Container = styled.header `
         color: #f2f5f7;
         width: 30px;
         height: 30px;
-        margin-top: 32px;
-        margin-left: 32px;
+        /* margin-top: 32px;
+        margin-left: 32px; */
         cursor: pointer;
     }
 `;
@@ -32,7 +32,7 @@ export const Li = styled.li `
 
 export const Logo = styled.img `
     width: 20%;
-    margin-right: 13%;
+    margin-left: 12%;
 `;
 
 export const divForm = styled.div `

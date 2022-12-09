@@ -1,8 +1,7 @@
-import { useRef, useEffect } from 'react'
-import * as S from '../../src/global/styles/SideBar.styles'
-import { FaTimes, FaHome, FaEnvelope, FaRegSun, FaUserAlt, FaIdCardAlt, FaRegFileAlt,FaRegCalendarAlt, FaChartBar} from "react-icons/fa"
-
-import SidebarItem from '../SidebarItem'
+import React from 'react'
+import Link from 'next/link'
+import * as S from './styles'
+import { FaTimes } from "react-icons/fa"
 
 const Sidebar = ({ active }:any) => {
 
@@ -14,15 +13,24 @@ const Sidebar = ({ active }:any) => {
         <S.Container>
             <FaTimes onClick={closeSidebar} />
             <S.Content>
-                <SidebarItem Icon={FaHome} Text="Home" />
-                <SidebarItem Icon={FaChartBar} Text="Statistics" />
-                <SidebarItem Icon={FaUserAlt} Text="Users" />
-                <SidebarItem Icon={FaEnvelope} Text="Mail" />
-                <SidebarItem Icon={FaRegCalendarAlt} Text="Calendar" />
-                <SidebarItem Icon={FaIdCardAlt} Text="Employees" />
-                <SidebarItem Icon={FaRegFileAlt} Text="Reports" />
-                <SidebarItem Icon={FaRegSun} Text="Settings" />
+                <S.SidebarItem>characters</S.SidebarItem>
+                <S.SidebarItem>
+                    <S.Icon src='/images/62-film-outline.gif' />
+                    movies
+                </S.SidebarItem>
+                <S.SidebarItem>
+                    <S.Icon src='/images/shildAmerica.png' />
+                    series
+                </S.SidebarItem>
+                <S.SidebarItem>sagas</S.SidebarItem>
+                <S.SidebarItem>hq's</S.SidebarItem>
+                <S.SidebarItem>books</S.SidebarItem>
             </S.Content>
+            <S.DivRouter>
+                <Link href={"https://github.com/Souza0Rock"} target="_blank" >
+                    <S.RouterGitHub src='/images/github.png' alt="developer's github" />
+                </Link>
+            </S.DivRouter>
         </S.Container>
     )
 }
