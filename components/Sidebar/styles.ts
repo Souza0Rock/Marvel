@@ -41,7 +41,7 @@ export const Item = styled.p `
 `;
 
 export const DivRouter = styled.div `
-    margin-top: 115%;
+    margin-top: 100%;
 `;
 
 export const RouterGitHub = styled.img `
@@ -60,8 +60,24 @@ export const SidebarItem = styled.div `
     border-radius: 10px;
     margin: 0 15px 20px;
     text-transform: uppercase;
+
+    &:hover {
+        background-color: #911111;
+    }
 `;
 
 export const Icon = styled.img `
     width: 35px;
+    margin-right: 10px;
+
+    &:first-child {
+        @keyframes rotate {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }  
 `;

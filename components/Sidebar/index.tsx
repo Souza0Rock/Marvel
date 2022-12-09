@@ -13,18 +13,30 @@ const Sidebar = ({ active }:any) => {
         <S.Container>
             <FaTimes onClick={closeSidebar} />
             <S.Content>
-                <S.SidebarItem>characters</S.SidebarItem>
                 <S.SidebarItem>
-                    <S.Icon src='/images/62-film-outline.gif' />
+                    <S.Icon src='/images/reactor.png' />
+                    characters
+                </S.SidebarItem>
+                <S.SidebarItem>
+                    <S.Icon src='/images/IconDeadpool.png' />
                     movies
                 </S.SidebarItem>
                 <S.SidebarItem>
                     <S.Icon src='/images/shildAmerica.png' />
                     series
                 </S.SidebarItem>
-                <S.SidebarItem>sagas</S.SidebarItem>
-                <S.SidebarItem>hq's</S.SidebarItem>
-                <S.SidebarItem>books</S.SidebarItem>
+                <S.SidebarItem>
+                    <S.Icon src='/images/groot.png' />
+                    sagas
+                </S.SidebarItem>
+                <S.SidebarItem>
+                    <S.Icon src='/images/wolverine.png' />
+                    hq's
+                </S.SidebarItem>
+                <S.SidebarItem>
+                    <S.Icon src='/images/BookIcon.png' />
+                    books
+                </S.SidebarItem>
             </S.Content>
             <S.DivRouter>
                 <Link href={"https://github.com/Souza0Rock"} target="_blank" >
