@@ -2,12 +2,12 @@ import {createGlobalStyle} from "styled-components";
 
 export const ResetCSS = createGlobalStyle`
   html, body {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Kanit', sans-serif;
   }
 
   body {
     min-height: 100vh;
-    background-color: ${({ theme }) => theme.colors.dark_800 };
+    background-color: ${({ theme }) => theme.colors.dark_700 };
   }
 
   a {

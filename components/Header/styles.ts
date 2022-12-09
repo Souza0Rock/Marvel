@@ -5,7 +5,7 @@ export const Container = styled.header `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #615772;
+    background-color: #171618;
     box-shadow: 0 0 20px 3px;
 
     > svg {
@@ -32,7 +32,7 @@ export const Li = styled.li `
 
 export const Logo = styled.img `
     width: 20%;
-    margin-left: 12%;
+    margin-left: 13%;
 `;
 
 export const divForm = styled.div `
@@ -52,7 +52,7 @@ export const Input = styled.input `
 export const Button = styled.button `
     height: 3rem;
     width: 20%;
-    background: url('../../gifSearch.gif');
+    background: url('/images/gifs/GifSearch.gif');
     background-size: 50px;
     background-color: #f2f5f7;
     border-radius: 0 5px 5px 0;

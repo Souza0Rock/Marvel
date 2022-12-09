@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.section`
     background-color: #171923;
@@ -7,7 +7,7 @@ export const Container = styled.section`
     top: 0px;
     left: 0px;
     width: 300px;
-    animation: showSidebar .4s;
+    animation: showSidebar .5s;
 
     > svg {
         position: fixed;
@@ -47,6 +47,11 @@ export const DivRouter = styled.div `
 export const RouterGitHub = styled.img `
     width: 30%;
     margin: 0 35%;
+    border-radius: 50%;
+
+    &:hover {
+        background-color: #911111;
+    }
 `;
 
 export const SidebarItem = styled.div `
@@ -69,15 +74,4 @@ export const SidebarItem = styled.div `
 export const Icon = styled.img `
     width: 35px;
     margin-right: 10px;
-
-    &:first-child {
-        @keyframes rotate {
-            0% {
-                transform: rotate(0);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    }  
 `;
