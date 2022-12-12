@@ -28,3 +28,9 @@ export const TitleCard = styled.h3 `
 export const DescriptionCard = styled.p `
     margin: 15px;
 `;
+
+export const Alert = styled.h1 `
+    margin: auto;
+    width: fit-content;
+    color: #f2f5f7;
+`

@@ -41,7 +41,7 @@ export const Item = styled.p `
 `;
 
 export const DivRouter = styled.div `
-    margin-top: 100%;
+    margin-bottom: 10%;
 `;
 
 export const RouterGitHub = styled.img `
@@ -74,4 +74,11 @@ export const SidebarItem = styled.div `
 export const Icon = styled.img `
     width: 35px;
     margin-right: 10px;
+`;
+
+export const ContainerContent = styled.div `
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
 `;
