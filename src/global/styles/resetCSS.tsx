@@ -2,7 +2,7 @@ import {createGlobalStyle} from "styled-components";
 
 export const ResetCSS = createGlobalStyle`
   html, body {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Marvel', sans-serif;
   }
 
   body {

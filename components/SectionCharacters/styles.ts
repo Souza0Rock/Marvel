@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
-export const Hello = styled.h1 `
-    margin: auto;
+export const Name = styled.h1 `
     width: fit-content;
     color: #f2f5f7;
+`;
+
+export const Thumbinail = styled.img `
+    width: 30%;
 `;

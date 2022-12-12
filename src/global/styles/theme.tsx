@@ -6,8 +6,4 @@ export const THEME: any = {
         dark_700: "#171C26",
         dark_500: "#5E6D8C"
     },
-
-    font: {
-        default: "Kanit_300Light"
-    }
 };
