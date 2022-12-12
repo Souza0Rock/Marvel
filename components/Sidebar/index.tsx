@@ -34,7 +34,7 @@ const Sidebar = ({ active }:any) => {
                 </S.SidebarItem>
                 <S.SidebarItem>
                     <S.Icon src='/images/wolverine.png' />
-                    hq's
+                    comics
                 </S.SidebarItem>
                 <S.SidebarItem>
                     <S.Icon src='/images/BookIcon.png' />
