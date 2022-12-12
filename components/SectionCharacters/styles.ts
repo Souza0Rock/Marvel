@@ -8,3 +8,7 @@ export const Name = styled.h1 `
 export const Thumbinail = styled.img `
     width: 30%;
 `;
+
+export const Card = styled.li `
+
+`;

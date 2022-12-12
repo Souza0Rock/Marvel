@@ -19,23 +19,22 @@ function SectionCharacters () {
     useEffect(() => {
         Api.get('/characters')
         .then(response =>{
-            console.log(response.data.data.results);
             setCharacter(response.data.data.results);
-            console.log('segundo log', character);
         })
-        .catch(err => console.log(err));
+        .catch(err => alert('Desculpe, algo deu errado'));
     }, [])
     
     return (
         <ul>
             {character.map(character => {
                 return (
-                    <li key={character?.id}>
-                        <S.Name>{character?.name}</S.Name>
+                    <S.Card key={character?.id}>
+                        <h2>{character?.name}</h2>
                         <S.Thumbinail 
-                        src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
-                        alt={character?.name} />
-                    </li>
+                            src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
+                            alt={character?.name} />
+                        <p>{character?.description}</p>
+                    </S.Card>
                 )
             })}
         </ul>
