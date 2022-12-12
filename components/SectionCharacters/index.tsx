@@ -9,7 +9,7 @@ interface ResponseData {
     thumbnail: {
         path: string;
         extension: string;
-    }
+    };
 }
 
 function SectionCharacters () {
@@ -25,19 +25,19 @@ function SectionCharacters () {
     }, [])
     
     return (
-        <ul>
-            {character.map(character => {
-                return (
-                    <S.Card key={character?.id}>
-                        <h2>{character?.name}</h2>
-                        <S.Thumbinail 
-                            src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
-                            alt={character?.name} />
-                        <p>{character?.description}</p>
-                    </S.Card>
-                )
-            })}
-        </ul>
+        <S.Container>
+            <S.UlCard>
+                {character.map(character => {
+                    return (
+                        <S.Card key={character?.id} thumbnail={character?.thumbnail} >
+                            <div id="img" />
+                            <h2>{character?.name}</h2>
+                            <p>{character?.description}</p>
+                        </S.Card>
+                    )
+                })}
+            </S.UlCard>
+        </S.Container>
     )
 }
 

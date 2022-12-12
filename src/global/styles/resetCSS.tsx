@@ -2,7 +2,7 @@ import {createGlobalStyle} from "styled-components";
 
 export const ResetCSS = createGlobalStyle`
   html, body {
-    font-family: 'Marvel', sans-serif;
+    font-family: 'Kanit', sans-serif;
   }
 
   body {
@@ -34,5 +34,5 @@ export const ResetCSS = createGlobalStyle`
   textarea:focus, input:focus {
     box-shadow: 0;
     outline: 0;
-}
-`
+  }
+`;
