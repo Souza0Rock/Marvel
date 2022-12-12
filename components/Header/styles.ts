@@ -33,6 +33,7 @@ export const Li = styled.li `
 export const Logo = styled.img `
     width: 20%;
     margin-left: 13%;
+    cursor: pointer;
 `;
 
 export const divForm = styled.div `
@@ -53,7 +54,9 @@ export const Button = styled.button `
     height: 3rem;
     width: 20%;
     background: url('/images/gifs/GifSearch.gif');
-    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
     background-color: #f2f5f7;
     border-radius: 0 5px 5px 0;
 `;
