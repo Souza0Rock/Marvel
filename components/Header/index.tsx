@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import * as S from './styles';
+import React from "react";
+import * as S from "./styles";
 import { FaBars } from "react-icons/fa"
 import Sidebar from "../Sidebar";
 import Router from "next/router";
 
-const Header = ({sidebar, setSidebar}: any) => {
+export default function Header ({sidebar, setSidebar}: any) {
 
     const showSidebar = () => setSidebar(!sidebar)
 
@@ -24,5 +24,3 @@ const Header = ({sidebar, setSidebar}: any) => {
         </S.Container>
     )
 }
-
-export default Header

@@ -1,7 +1,5 @@
 import Head from 'next/head';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import axios from 'axios';
-import md5 from 'md5'
 import Header from '../../../components/Header';
 import { ThemeProvider } from 'styled-components';
 import { ResetCSS } from '../../global/styles/resetCSS';
