@@ -12,13 +12,6 @@ interface ResponseData {
     };
 }
 
-interface ThumbnailData {
-    thumbnail: {
-        path: string;
-        extension: string;
-    };
-};
-
 export default function MainCharacters ({propFilter}: any) {
 
     const [character, setCharacter] = useState<ResponseData[]>([]);
@@ -28,8 +21,11 @@ export default function MainCharacters ({propFilter}: any) {
         .then(response =>{
             setCharacter(response?.data?.data?.results);
         })
-        .catch(err => alert('Sorry, something went wrong.'));
+        .catch(err => alert("Sorry, something went wrong."));
     }, [])
+
+    console.log(``);
+    
 
     const handleMore = useCallback(async () => {
         try {
@@ -49,7 +45,7 @@ export default function MainCharacters ({propFilter}: any) {
 
     const teste = character?.filter((item) =>
     item?.name?.toLowerCase()?.includes(propFilter?.toLowerCase())
-    );
+    );    
 
     return (
         <S.Container>
