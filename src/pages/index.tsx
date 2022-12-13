@@ -33,7 +33,7 @@ export default function Home() {
     <Fragment>
       <ThemeProvider theme={THEME}>
         <ResetCSS />
-        <div ref={ref} onClick={closeSidebar} />
+          <div ref={ref} onClick={closeSidebar} />
           <Header sidebar={sidebar} setSidebar={setSidebar}/>
           <SectionHome />
       </ThemeProvider>

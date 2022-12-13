@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.section`
     background-color: #171923;
@@ -30,6 +30,13 @@ export const Container = styled.section`
     }
 `;
 
+export const DisplayFlex = styled.div `
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`;
+
 export const Content = styled.div `
     margin-top: 100px;
     display: flex;
@@ -50,7 +57,7 @@ export const RouterGitHub = styled.img `
     border-radius: 50%;
 
     &:hover {
-        background-color: #911111;
+        background-color: rgb(255, 12, 24, 0.3);
     }
 `;
 

@@ -9,12 +9,9 @@ export const Container = styled.header `
     box-shadow: 0 0 20px 3px;
 
     > svg {
-        /* position: fixed; */
-        color: #f2f5f7;
+        color: ${({ theme }) => theme.colors.light};
         width: 30px;
         height: 30px;
-        /* margin-top: 32px;
-        margin-left: 32px; */
         cursor: pointer;
     }
 `;
@@ -27,7 +24,7 @@ export const Li = styled.li `
     margin: 0 20px;
     font-size: 25px;
     text-transform: uppercase;
-    color: #f2f5f7;
+    background-color: ${({ theme }) => theme.colors.light};
 `;
 
 export const Logo = styled.img `
@@ -46,7 +43,7 @@ export const Input = styled.input `
     width: 80%;
     padding: 0 10px;
     font-size: 18px;
-    background-color: #f2f5f7;
+    background-color: ${({ theme }) => theme.colors.light};
     border-radius: 5px 0 0 5px;
 `;
 
@@ -57,6 +54,6 @@ export const Button = styled.button `
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    background-color: #f2f5f7;
+    background-color: ${({ theme }) => theme.colors.light};
     border-radius: 0 5px 5px 0;
 `;
