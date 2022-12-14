@@ -4,8 +4,6 @@ import MainCharacters from '../../../components/MainCharacters';
 import { ThemeProvider } from 'styled-components';
 import { ResetCSS } from '../../global/styles/resetCSS';
 import { THEME } from '../../global/styles/theme';
-import * as S from "../../../components/Header/styles";
-import axios from 'axios';
 
 export default function Characters() {
 
@@ -31,8 +29,6 @@ export default function Characters() {
 
   const [sidebar, setSidebar] = useState(false)
 
-  const [search, setSearch] = useState("");
-
   // const requestSearch = () => {
   //   axios.get(`http://gateway.marvel.com/v1/public/characters?nameStartsWith=iron&ts=1&apikey=06ead66137452ef75685fcdc895a6c0b&hash=2774d42849c52a2ec23f9b2298e41e7a`)
   // }
@@ -42,19 +38,8 @@ export default function Characters() {
       <ThemeProvider theme={THEME}>
         <ResetCSS />
           <div ref={ref} onClick={closeSidebar} />
-          <Header sidebar={sidebar} setSidebar={setSidebar}>
-            <S.Input 
-              type={"text"}
-              placeholder={"search"}
-              onChange={(ev) => setSearch(ev.target.value)}
-            />
-            <S.Button 
-              type="submit"
-              onClick={() => 
-              {}}
-            />
-          </Header>
-          <MainCharacters propFilter={search} />
+          <Header sidebar={sidebar} setSidebar={setSidebar} />
+          <MainCharacters />
       </ThemeProvider>
     </Fragment>
   )

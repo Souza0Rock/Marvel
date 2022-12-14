@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import Api from '../../src/services/api';
+import Modal from '../Modal';
 import * as S from './styles'
 
 interface ResponseData {
@@ -12,21 +13,18 @@ interface ResponseData {
     };
 }
 
-export default function MainCharacters ({propFilter}: any) {
-
+export default function MainCharacters () {
+    
     const [character, setCharacter] = useState<ResponseData[]>([]);
-
+    
     useEffect(() => {
         Api.get('/characters')
         .then(response =>{
             setCharacter(response?.data?.data?.results);
         })
         .catch(err => alert("Sorry, something went wrong."));
-    }, [])
-
-    console.log(``);
+    }, [])    
     
-
     const handleMore = useCallback(async () => {
         try {
             const offset = character?.length;
@@ -39,20 +37,46 @@ export default function MainCharacters ({propFilter}: any) {
             setCharacter([...character, ...response?.data?.data?.results])
 
         } catch (err) {
-            console.log(err);           
+            alert("Sorry, something went wrong.");           
         }
     }, [character])
 
-    const teste = character?.filter((item) =>
-    item?.name?.toLowerCase()?.includes(propFilter?.toLowerCase())
-    );    
+    const [search, setSearch] = useState("");
+
+    const characterFilter = character?.filter((item) =>
+    item?.name?.toLowerCase()?.includes(search?.toLowerCase())
+    );
+
+    const [modalOpen, setModalOpen] = useState(false)
 
     return (
         <S.Container>
+            <Modal 
+                isOpen={modalOpen} 
+                setIsOpen={setModalOpen}
+                closeButton={true}
+                overlayClose={true}
+            />
+            <S.DivForm>
+                <S.LabelSearch htmlFor={"search"}>
+                    Search for your character here.
+                </S.LabelSearch>
+                <S.Input
+                    type={"text"}
+                    placeholder={"search"}
+                    onChange={(ev) => {
+                        setSearch(ev.target.value)
+                    }}
+                />
+            </S.DivForm>
             <S.UlCard>
-                {teste.map(character => {
+                {characterFilter.map(character => {
                     return (
-                        <S.Card key={character?.id}>
+                        <S.Card key={character?.id} 
+                            onClick={() => {
+                                setModalOpen(true);
+                            }}
+                        >
                             <img src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
                                 alt={character?.name} 
                                 id="img" />

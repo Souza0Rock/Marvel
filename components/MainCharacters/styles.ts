@@ -10,6 +10,28 @@ export const Container = styled.main `
     gap: 2rem;
 `;
 
+export const DivForm = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 0;
+`;
+
+export const LabelSearch = styled.label `
+    font-size: 2rem;
+    color: ${({ theme }) => theme.colors.light};
+`;
+
+export const Input = styled.input `
+    width: 15%;
+    height: 2rem;
+    padding: 0 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: ${({ theme }) => theme.colors.light};
+`;
+
 export const UlCard = styled.ul `
     display: flex;
     flex-wrap: wrap;
@@ -18,13 +40,14 @@ export const UlCard = styled.ul `
 
 export const Card = styled.li `
     background-color: ${({ theme }) => theme.colors.light};
-    max-height: 435px;
+    max-height: 415px;
     width: 21%;
     min-width: 350px;
     margin: 10px;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 2px 2px 10px 1px rgb(0, 0, 0, 0.3);
+    cursor: pointer;
 
     h2 {
         padding: 7px;
@@ -44,7 +67,7 @@ export const Card = styled.li `
     &:hover {
         #img {
             height: 200px;
-            object-fit: cover;
+            /* object-fit: cover; */
         }
     }
 `;
