@@ -21,9 +21,14 @@ export default function MainCharacters () {
     const [teste, setTeste] = useState(false)
     
     useEffect(() => {
-        Api.get('/characters')
+        Api.get('/characters', {
+            params: {
+                limit: 20
+            }
+        })
         .then(response =>{
             setCharacter(response?.data?.data?.results);
+            console.log(response?.data, 'teste');
         })
         .catch(err => setTeste(true));
     }, [])    
@@ -34,6 +39,7 @@ export default function MainCharacters () {
             const response = await Api.get('characters', {
                 params: {
                     offset,
+                    limit: 30,
                 },
             });
 
@@ -83,11 +89,14 @@ export default function MainCharacters () {
                                     setModalOpen(true);
                                 }}
                             >
-                                <img src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
+                                <img src={`${character?.thumbnail?.path}/portrait_uncanny.${character?.thumbnail?.extension}`} 
                                     alt={character?.name} 
                                     id="img" />
                                 <h2>{character?.name}</h2>
-                                <p>{character?.description}</p>
+                                {character?.description ? 
+                                    <p>{character?.description}</p> :
+                                    <p>Description not provided</p>
+                                }
                             </S.Card>
                         )
                     })}

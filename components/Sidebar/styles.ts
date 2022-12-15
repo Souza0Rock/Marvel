@@ -8,7 +8,7 @@ export const Container = styled.section`
     left: 0px;
     width: 300px;
     animation: showSidebar .5s;
-
+    
     > svg {
         position: fixed;
         color: white;

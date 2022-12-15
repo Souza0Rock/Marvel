@@ -40,9 +40,9 @@ export const UlCard = styled.ul `
 
 export const Card = styled.li `
     background-color: ${({ theme }) => theme.colors.light};
-    max-height: 415px;
-    width: 21%;
-    min-width: 350px;
+    max-height: 500px;
+    width: 16%;
+    min-width: 300px;
     margin: 10px;
     border-radius: 5px;
     overflow: hidden;
@@ -59,7 +59,7 @@ export const Card = styled.li `
     }
 
     #img {
-        height: 89%;
+        height: 90%;
         width: 100%;
         transition: all 1s;
     }
@@ -67,7 +67,7 @@ export const Card = styled.li `
     &:hover {
         #img {
             height: 200px;
-            /* object-fit: cover; */
+            object-fit: cover;
         }
     }
 `;

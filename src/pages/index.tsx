@@ -4,6 +4,7 @@ import { THEME } from '../global/styles/theme';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import Header from '../../components/Header';
 import SectionHome from '../../components/SectionHome';
+import Sidebar from '../../components/Sidebar';
 
 export default function Home() {
 
@@ -33,7 +34,9 @@ export default function Home() {
     <Fragment>
       <ThemeProvider theme={THEME}>
         <ResetCSS />
-          <div ref={ref} onClick={closeSidebar} />
+          <div ref={ref} onClick={closeSidebar}>
+            {sidebar && <Sidebar active={setSidebar} />}
+          </div>
           <Header sidebar={sidebar} setSidebar={setSidebar}/>
           <SectionHome />
       </ThemeProvider>
