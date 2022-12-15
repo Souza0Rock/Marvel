@@ -1,18 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import * as S from './styles'
 
-export default function Modal ({ isOpen, setIsOpen, closeButton = true, overlayClose = false, id = 'modal' }: any) {
+export default function Modal ({ isOpen, setIsOpen, closeButton = true, teste }: any) {
     
     if (!isOpen) return null;
-
-    // const handleOverlayClick = ({e}: any) => {
-    //     if(e) e.preventDefault();
-    //     if(e?.target.id !== id) return;
-    //     setIsOpen(false);
-    // }
-
+    console.log(teste, 'resposta');
+    
     return (
-        <>
+        <Fragment>
             <S.Overlay
                 onClick={() => {
                     setIsOpen(false)
@@ -24,8 +19,10 @@ export default function Modal ({ isOpen, setIsOpen, closeButton = true, overlayC
                         setIsOpen(false)
                     }}
                 /> : null}
-                <h1>hello</h1>
+                <h1>
+                    {teste[1]?.name}
+                </h1>
             </S.Modal>
-        </>
+        </Fragment>
     );
 }

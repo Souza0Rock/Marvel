@@ -18,7 +18,7 @@ export default function MainCharacters () {
     
     const [character, setCharacter] = useState<ResponseData[]>([]);
 
-    const [teste, setTeste] = useState(false)
+    const [error, setError] = useState(false)
     
     useEffect(() => {
         Api.get('/characters', {
@@ -28,10 +28,13 @@ export default function MainCharacters () {
         })
         .then(response =>{
             setCharacter(response?.data?.data?.results);
-            console.log(response?.data, 'teste');
+            setTeste(response?.data?.data?.results)
+            // console.log(response?.data, 'teste');
         })
-        .catch(err => setTeste(true));
-    }, [])    
+        .catch(err => setError(true));
+    }, [])
+
+    const [teste, setTeste] = useState();
     
     const handleMore = useCallback(async () => {
         try {
@@ -46,13 +49,13 @@ export default function MainCharacters () {
             setCharacter([...character, ...response?.data?.data?.results])
 
         } catch (err) {
-            setTeste(true);           
+            setError(true);           
         }
     }, [character])
 
     const [search, setSearch] = useState("");
 
-    const characterFilter = character?.filter((item) =>
+    const characterSearchFilter = character?.filter((item) =>
     item?.name?.toLowerCase()?.includes(search?.toLowerCase())
     );
 
@@ -60,15 +63,9 @@ export default function MainCharacters () {
 
     return (
         <S.Container>
-        {teste ? 
+        {error ? 
             <Error /> :
             <Fragment>
-                <Modal 
-                    isOpen={modalOpen} 
-                    setIsOpen={setModalOpen}
-                    closeButton={true}
-                    overlayClose={true}
-                />
                 <S.DivForm>
                     <S.LabelSearch htmlFor={"search"}>
                         Search for your character here.
@@ -82,7 +79,7 @@ export default function MainCharacters () {
                     />
                 </S.DivForm>
                 <S.UlCard>
-                    {characterFilter && characterFilter.map(character => {
+                    {characterSearchFilter && characterSearchFilter.map(character => {
                         return (
                             <S.Card key={character?.id} 
                                 onClick={() => {
@@ -95,7 +92,7 @@ export default function MainCharacters () {
                                 <h2>{character?.name}</h2>
                                 {character?.description ? 
                                     <p>{character?.description}</p> :
-                                    <p>Description not provided</p>
+                                    <p>Description not provided.</p>
                                 }
                             </S.Card>
                         )
@@ -104,6 +101,12 @@ export default function MainCharacters () {
                 <S.ButtonMore onClick={handleMore}>
                     <h1>more</h1>
                 </S.ButtonMore>
+                <Modal 
+                    isOpen={modalOpen} 
+                    setIsOpen={setModalOpen}
+                    character={character}
+                    teste={teste}
+                />
             </Fragment>
         }
         </S.Container>
