@@ -5,11 +5,11 @@ export default function Modal ({ isOpen, setIsOpen, closeButton = true, overlayC
     
     if (!isOpen) return null;
 
-    const handleOverlayClick = ({e}: any) => {
-        if(e) e.preventDefault();
-        if(e?.target.id !== id) return;
-        setIsOpen(false);
-    }
+    // const handleOverlayClick = ({e}: any) => {
+    //     if(e) e.preventDefault();
+    //     if(e?.target.id !== id) return;
+    //     setIsOpen(false);
+    // }
 
     return (
         <>

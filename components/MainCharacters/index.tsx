@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { Fragment, useCallback, useEffect, useState } from 'react';
 import Api from '../../src/services/api';
 import Modal from '../Modal';
+import { Error } from '../Error';
 import * as S from './styles'
 
 interface ResponseData {
@@ -16,13 +17,15 @@ interface ResponseData {
 export default function MainCharacters () {
     
     const [character, setCharacter] = useState<ResponseData[]>([]);
+
+    const [teste, setTeste] = useState(false)
     
     useEffect(() => {
         Api.get('/characters')
         .then(response =>{
             setCharacter(response?.data?.data?.results);
         })
-        .catch(err => alert("Sorry, something went wrong."));
+        .catch(err => setTeste(true));
     }, [])    
     
     const handleMore = useCallback(async () => {
@@ -37,7 +40,7 @@ export default function MainCharacters () {
             setCharacter([...character, ...response?.data?.data?.results])
 
         } catch (err) {
-            alert("Sorry, something went wrong.");           
+            setTeste(true);           
         }
     }, [character])
 
@@ -51,44 +54,49 @@ export default function MainCharacters () {
 
     return (
         <S.Container>
-            <Modal 
-                isOpen={modalOpen} 
-                setIsOpen={setModalOpen}
-                closeButton={true}
-                overlayClose={true}
-            />
-            <S.DivForm>
-                <S.LabelSearch htmlFor={"search"}>
-                    Search for your character here.
-                </S.LabelSearch>
-                <S.Input
-                    type={"text"}
-                    placeholder={"search"}
-                    onChange={(ev) => {
-                        setSearch(ev.target.value)
-                    }}
+        {teste ? 
+            <Error /> :
+            <Fragment>
+                <Modal 
+                    isOpen={modalOpen} 
+                    setIsOpen={setModalOpen}
+                    closeButton={true}
+                    overlayClose={true}
                 />
-            </S.DivForm>
-            <S.UlCard>
-                {characterFilter.map(character => {
-                    return (
-                        <S.Card key={character?.id} 
-                            onClick={() => {
-                                setModalOpen(true);
-                            }}
-                        >
-                            <img src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
-                                alt={character?.name} 
-                                id="img" />
-                            <h2>{character?.name}</h2>
-                            <p>{character?.description}</p>
-                        </S.Card>
-                    )
-                })}
-            </S.UlCard>
-            <S.ButtonMore onClick={handleMore}>
-                <h1>more</h1>
-            </S.ButtonMore>
+                <S.DivForm>
+                    <S.LabelSearch htmlFor={"search"}>
+                        Search for your character here.
+                    </S.LabelSearch>
+                    <S.Input
+                        type={"text"}
+                        placeholder={"search"}
+                        onChange={(ev) => {
+                            setSearch(ev.target.value)
+                        }}
+                    />
+                </S.DivForm>
+                <S.UlCard>
+                    {characterFilter && characterFilter.map(character => {
+                        return (
+                            <S.Card key={character?.id} 
+                                onClick={() => {
+                                    setModalOpen(true);
+                                }}
+                            >
+                                <img src={`${character?.thumbnail?.path}.${character?.thumbnail?.extension}`} 
+                                    alt={character?.name} 
+                                    id="img" />
+                                <h2>{character?.name}</h2>
+                                <p>{character?.description}</p>
+                            </S.Card>
+                        )
+                    })}
+                </S.UlCard>
+                <S.ButtonMore onClick={handleMore}>
+                    <h1>more</h1>
+                </S.ButtonMore>
+            </Fragment>
+        }
         </S.Container>
     )
 }
