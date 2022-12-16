@@ -1,9 +1,6 @@
 import styled from "styled-components";
 
 export const Overlay = styled.div `
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -13,7 +10,8 @@ export const Overlay = styled.div `
 `;
 
 export const Modal = styled.div `
-    background-color: ${({ theme }) => theme.colors.light};
+
+    background-color: ${({ theme }) => theme.colors.dark_500};
     color: ${({ theme }) => theme.colors.light};
     padding: 2rem;
     border-radius: 0.75rem;
@@ -24,9 +22,30 @@ export const Modal = styled.div `
     bottom: 0;
     right: 0;
     left: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-    h1 {
+    h1, p {
         color: black;
+    }
+
+    .divImg {
+        display: flex;
+        border-radius: 10px;
+        background-color: ${({ theme }) => theme.colors.light};
+    }
+
+    p {
+        margin: auto;
+        padding: 0 5%;
+        text-align: justify;
+    }
+
+    .containerFlex {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
 `;
 
@@ -59,5 +78,47 @@ export const CloseButton = styled.button `
 
     &::after {
         transform: rotate(-45deg);
+    }
+`;
+
+export const Dropdown = styled.div `
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul li {
+        width: 20%;
+        position: relative;
+        float: left;
+        border-radius: 5px;
+        background-color: ${({ theme }) => theme.colors.light};
+    }
+
+    ul li p {
+        padding: 10px;
+        display: block;
+        font-size: 20px;
+        text-align: center;
+        color: black;
+    }
+
+    ul li ul {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+
+    ul li:focus-within > ul,
+    ul li:hover > ul {
+        display: initial;
+        transition: all 0.5s;
+    }
+
+    ul li ul li {
+        width: 100%;   
+        border: 1px solid black;
     }
 `;

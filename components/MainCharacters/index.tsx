@@ -19,6 +19,7 @@ export default function MainCharacters () {
     const [character, setCharacter] = useState<ResponseData[]>([]);
 
     const [error, setError] = useState(false)
+    const [select, setSelect] = useState<any>()
     
     useEffect(() => {
         Api.get('/characters', {
@@ -28,13 +29,9 @@ export default function MainCharacters () {
         })
         .then(response =>{
             setCharacter(response?.data?.data?.results);
-            setTeste(response?.data?.data?.results)
-            // console.log(response?.data, 'teste');
         })
         .catch(err => setError(true));
     }, [])
-
-    const [teste, setTeste] = useState();
     
     const handleMore = useCallback(async () => {
         try {
@@ -84,11 +81,13 @@ export default function MainCharacters () {
                             <S.Card key={character?.id} 
                                 onClick={() => {
                                     setModalOpen(true);
+                                    setSelect(character)
                                 }}
                             >
                                 <img src={`${character?.thumbnail?.path}/portrait_uncanny.${character?.thumbnail?.extension}`} 
                                     alt={character?.name} 
-                                    id="img" />
+                                    id="img" 
+                                />
                                 <h2>{character?.name}</h2>
                                 {character?.description ? 
                                     <p>{character?.description}</p> :
@@ -104,8 +103,7 @@ export default function MainCharacters () {
                 <Modal 
                     isOpen={modalOpen} 
                     setIsOpen={setModalOpen}
-                    character={character}
-                    teste={teste}
+                    character={select}
                 />
             </Fragment>
         }
