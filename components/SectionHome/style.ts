@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section `
-    padding: 50px 0;
+    padding: 50px;
 `;
 
 export const Ul = styled.ul `
@@ -33,4 +33,8 @@ export const Alert = styled.h1 `
     margin: auto;
     width: fit-content;
     color: #f2f5f7;
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+    }
 `

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header `
+    width: 100%;
     padding: 0 4%;
     display: flex;
     justify-content: space-between;
@@ -48,7 +49,7 @@ export const Input = styled.input `
 `;
 
 export const Button = styled.button `
-    height: 3rem;
+    min-height: 3rem;
     width: 20%;
     background: url('/images/gifs/GifSearch.gif');
     background-repeat: no-repeat;
