@@ -16,7 +16,7 @@ export const Modal = styled.div `
     padding: 2rem;
     border-radius: 0.75rem;
     max-width: 50vw;
-    max-height: 50vh;
+    max-height: 60vh;
     position: fixed;
     top: 25%;
     bottom: 0;
@@ -92,13 +92,11 @@ export const Dropdown = styled.div `
         width: 20%;
         position: relative;
         float: left;
-        border-radius: 5px;
         background-color: ${({ theme }) => theme.colors.light};
     }
 
     ul li p {
         padding: 10px;
-        display: block;
         font-size: 20px;
         text-align: center;
         color: black;
@@ -106,8 +104,12 @@ export const Dropdown = styled.div `
 
     ul li ul {
         position: absolute;
+        display: flex;
+        flex-direction: column;
         left: 0;
         width: 100%;
+        max-height: 220px;
+        overflow-y: scroll;
         display: none;
     }
 
@@ -119,6 +121,26 @@ export const Dropdown = styled.div `
 
     ul li ul li {
         width: 100%;   
-        border: 1px solid black;
+        border-bottom: 1px solid black;
     }
+
+    .itemMap {
+        font-size: 12px;
+    }
+
+    .dropItem {
+        border-radius: 5px;
+    }
+
+    /* ::-webkit-scrollbar {
+        width: 12px;
+        background-color: red;
+        border: 5px solid white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: blue;
+        border-radius: 50px;
+        border: 2px solid white;
+    } */
 `;

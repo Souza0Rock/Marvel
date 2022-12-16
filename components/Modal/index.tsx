@@ -38,38 +38,56 @@ export default function Modal ({ isOpen, setIsOpen, closeButton = true, characte
                     </div>
                     <S.Dropdown>
                         <ul>
-                            <li><p>comics +</p>
+                            <li className="dropItem"><p>comics +</p>
                                 <ul>
                                 {
                                     character?.comics?.items?.map((item: any) =>{
                                         return (
                                             <li>
-                                                <p>{item?.name}</p>
+                                                <p className="itemMap">{item?.name}</p>
                                             </li>
                                         )
                                     })
                                 }
                                 </ul>
                             </li>
-                            <li><p>series +</p>
+                            <li className="dropItem"><p>events +</p>
                                 <ul>
-                                    <li>
-                                        <p>deu certo</p>
-                                    </li>
+                                {
+                                    character?.events?.items?.map((item: any) =>{
+                                        return (
+                                            <li>
+                                                <p className="itemMap">{item?.name}</p>
+                                            </li>
+                                        )
+                                    })
+                                }
                                 </ul>
                             </li>
-                            <li><p>stories +</p>
+                            <li className="dropItem"><p>series +</p>
                                 <ul>
-                                    <li>
-                                        <p>deu certo</p>
-                                    </li>
+                                {
+                                    character?.series?.items?.map((item: any) =>{
+                                        return (
+                                            <li>
+                                                <p className="itemMap">{item?.name}</p>
+                                            </li>
+                                        )
+                                    })
+                                }
                                 </ul>
                             </li>
-                            <li><p>events +</p>
+                            <li className="dropItem"><p>stories +</p>
                                 <ul>
-                                    <li>
-                                        <p>deu certo</p>
-                                    </li>
+                                {
+                                    character?.stories?.items?.map((item: any) =>{
+                                        return (
+                                            <li>
+                                                <p className="itemMap">{item?.name}</p>
+                                            </li>
+                                        )
+                                    })
+                                }
                                 </ul>
                             </li>
                         </ul>
