@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Overlay = styled.div `
+interface Props {
+    scroll: boolean
+}
+
+export const Overlay = styled.div`
     position: fixed;
     top: 0;
     bottom: 0;
@@ -9,7 +13,12 @@ export const Overlay = styled.div `
     background-color: rgb(0 0 0 / 40%);
 `;
 
-export const Modal = styled.div `
+export const Teste = styled.div`
+display: flex;
+width: 100%;
+`;
+
+export const Modal = styled.div`
 
     background-color: ${({ theme }) => theme.colors.dark_500};
     color: ${({ theme }) => theme.colors.light};
@@ -49,7 +58,7 @@ export const Modal = styled.div `
     }
 `;
 
-export const CloseButton = styled.button `
+export const CloseButton = styled.button`
     width: 1.25rem;
     height: 1.25rem;
     cursor: pointer;
@@ -81,15 +90,15 @@ export const CloseButton = styled.button `
     }
 `;
 
-export const Dropdown = styled.div `
-
+export const Dropdown = styled.div<Props>`
+width: 95%;
     ul {
         display: flex;
         justify-content: space-between;
     }
 
     ul li {
-        width: 20%;
+        width: 95%;
         position: relative;
         float: left;
         background-color: ${({ theme }) => theme.colors.light};
@@ -108,15 +117,15 @@ export const Dropdown = styled.div `
         flex-direction: column;
         left: 0;
         width: 100%;
-        max-height: 220px;
-        overflow-y: scroll;
+        max-height: 200px;
+        overflow-y: ${({ scroll }) => scroll ? 'scroll' : 'none'};
+        border-radius: 0px 0px 5px 5px;
         display: none;
     }
 
     ul li:focus-within > ul,
     ul li:hover > ul {
         display: initial;
-        transition: all 0.5s;
     }
 
     ul li ul li {
@@ -132,15 +141,7 @@ export const Dropdown = styled.div `
         border-radius: 5px;
     }
 
-    /* ::-webkit-scrollbar {
-        width: 12px;
-        background-color: red;
-        border: 5px solid white;
+    .dropItem:hover {
+        border-radius: 5px 5px 0 0;
     }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: blue;
-        border-radius: 50px;
-        border: 2px solid white;
-    } */
 `;

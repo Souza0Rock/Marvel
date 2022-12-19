@@ -1,22 +1,22 @@
 import React, { Fragment } from "react";
 import * as S from './styles'
 
-export default function Modal ({ isOpen, setIsOpen, closeButton = true, character }: any) {
-    
+export default function Modal({ isOpen, setIsOpen, closeButton = true, character }: any) {
+
     if (!isOpen) return null;
 
     console.log(character, 'testando requisição');
-    
-    
+
+
     return (
         <Fragment>
             <S.Overlay
                 onClick={() => {
                     setIsOpen(false)
-                }} 
+                }}
             />
             <S.Modal>
-                {closeButton ? <S.CloseButton type="button" 
+                {closeButton ? <S.CloseButton type="button"
                     onClick={() => {
                         setIsOpen(false)
                     }}
@@ -26,17 +26,87 @@ export default function Modal ({ isOpen, setIsOpen, closeButton = true, characte
                 </h1>
                 <div className="containerFlex">
                     <div className="divImg">
-                        <img 
-                            src={`${character?.thumbnail?.path}/standard_amazing.${character?.thumbnail?.extension}`} 
-                            alt={character?.name} 
-                            id="img" 
+                        <img
+                            src={`${character?.thumbnail?.path}/standard_amazing.${character?.thumbnail?.extension}`}
+                            alt={character?.name}
+                            id="img"
                         />
-                        {character?.description ? 
+                        {character?.description ?
                             <p>{character?.description}</p> :
                             <p>Description not provided.</p>
                         }
                     </div>
-                    <S.Dropdown>
+                    <S.Teste>
+                    <S.Dropdown scroll={character?.comics?.items?.length > 4}>
+                        <ul>
+                            <li className="dropItem"><p>comics +</p>
+                                <ul>
+                                    {
+                                        character?.comics?.items?.map((item: any) => {
+                                            return (
+                                                <li>
+                                                    <p className="itemMap">{item?.name}</p>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </S.Dropdown>
+                    <S.Dropdown scroll={character?.events?.items?.length > 4}>
+                        <ul>
+                            <li className="dropItem"><p>events +</p>
+                                <ul>
+                                    {
+                                        character?.events?.items?.map((item: any) => {
+                                            return (
+                                                <li>
+                                                    <p className="itemMap">{item?.name}</p>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </S.Dropdown>
+                    <S.Dropdown scroll={character?.series?.items?.length > 4}>
+                        <ul>
+                            <li className="dropItem"><p>series +</p>
+                                <ul>
+                                    {
+                                        character?.series?.items?.map((item: any) => {
+                                            return (
+                                                <li>
+                                                    <p className="itemMap">{item?.name}</p>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </S.Dropdown>
+                    <S.Dropdown scroll={character?.stories?.items?.length > 4}>
+                        <ul>
+                            <li className="dropItem"><p>stories +</p>
+                                <ul>
+                                    {
+                                        character?.stories?.items?.map((item: any) => {
+                                            return (
+                                                <li>
+                                                    <p className="itemMap">{item?.name}</p>
+                                                </li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </li>
+                        </ul>
+                    </S.Dropdown>
+                    </S.Teste>
+                    {/* <S.Dropdown>
                         <ul>
                             <li className="dropItem"><p>comics +</p>
                                 <ul>
@@ -91,7 +161,7 @@ export default function Modal ({ isOpen, setIsOpen, closeButton = true, characte
                                 </ul>
                             </li>
                         </ul>
-                    </S.Dropdown>
+                    </S.Dropdown> */}
                 </div>
             </S.Modal>
         </Fragment>

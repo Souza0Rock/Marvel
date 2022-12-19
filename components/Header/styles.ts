@@ -14,29 +14,57 @@ export const Container = styled.header `
         width: 30px;
         height: 30px;
         cursor: pointer;
+
+        @media (max-width: 480px) {
+        width: 50px;
+        height: 50px;
+        margin: 3rem 0;
+        align-self: baseline;
+        }
     }
 `;
 
-export const RouterGitHub = styled.img `
-    width: 20%;
-`;
+export const Contents = styled.div `
+    display: contents;
 
-export const Li = styled.li `
-    margin: 0 20px;
-    font-size: 25px;
-    text-transform: uppercase;
-    background-color: ${({ theme }) => theme.colors.light};
+    @media (max-width: 480px) {
+        padding-right: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const Logo = styled.img `
     width: 20%;
-    margin-left: 13%;
+    margin-left: 12.8%;
     cursor: pointer;
+
+    @media (max-width: 1024px) {
+        width: 30%;
+        margin-left: 16.6%;
+    }
+
+    @media (max-width: 480px) {
+        width: 60%;
+        margin-left: 0;
+    }
 `;
 
 export const divForm = styled.div `
     width: 15%;
+    max-height: 3rem;
+    margin: 1rem 0;
     display: flex;
+
+    @media (max-width: 1024px) {
+        width: 20%;
+    }
+
+    @media (max-width: 480px) {
+        width: 70%;
+        margin-bottom: 2rem;
+    }
 `;
 
 export const Input = styled.input `

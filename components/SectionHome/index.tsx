@@ -32,3 +32,4 @@ import * as S from "./style"
             </S.Section>
         )
     }
+    

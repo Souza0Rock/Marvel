@@ -20,6 +20,7 @@ export const DivForm = styled.div `
 
 export const LabelSearch = styled.label `
     font-size: 2rem;
+    text-align: center;
     color: ${({ theme }) => theme.colors.light};
 `;
 
@@ -30,6 +31,18 @@ export const Input = styled.input `
     font-size: 1rem;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.light};
+
+    @media (max-width: 1366px) {
+        width: 22%;
+    }
+
+    @media (max-width: 1024px) {
+        width: 35%;
+    }
+
+    @media (max-width: 480px) {
+        width: 60%;
+    }
 `;
 
 export const UlCard = styled.ul `
@@ -76,6 +89,7 @@ export const Card = styled.li `
 export const ButtonMore = styled.button `
     height: 3rem;
     width: 10%;
+    min-width: 150px;
     align-self: center;
     border-radius: 5px;
     background-color: ${({ theme }) => theme.colors.light};
