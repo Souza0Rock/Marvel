@@ -7,18 +7,9 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
 
     console.log(character, 'testando requisição');
 
+    
     const teste = () => {
-        window.addEventListener('resize', function () {
-            //var altura = window.innerHeight;
-            let largura = window.innerWidth;
-        
-            if (largura < 768) {
-                "portrait_medium";
-            }
-            else {
-                "standard_amazing";
-            }
-        });
+        document.getElementById("z-index")
     }
 
 
@@ -53,7 +44,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                     <S.Teste>
                         <S.Dropdown scroll={character?.comics?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem" ><p>comics <br />+</p>
+                                <li className="dropItem" onClick={() => {teste}} ><p>comics <br />+</p>
                                     <ul>
                                         {
                                             character?.comics?.items?.map((item: any) => {
@@ -87,7 +78,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                         </S.Dropdown>
                         <S.Dropdown scroll={character?.series?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem" id="z-index"><p>series <br />+</p>
+                                <li className="dropItem"><p>series <br />+</p>
                                     <ul>
                                         {
                                             character?.series?.items?.map((item: any) => {
