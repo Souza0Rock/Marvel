@@ -53,7 +53,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                     <S.Teste>
                         <S.Dropdown scroll={character?.comics?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem"><p>comics <br />+</p>
+                                <li className="dropItem" ><p>comics <br />+</p>
                                     <ul>
                                         {
                                             character?.comics?.items?.map((item: any) => {
@@ -87,7 +87,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                         </S.Dropdown>
                         <S.Dropdown scroll={character?.series?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem"><p>series <br />+</p>
+                                <li className="dropItem" id="z-index"><p>series <br />+</p>
                                     <ul>
                                         {
                                             character?.series?.items?.map((item: any) => {
@@ -104,7 +104,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                         </S.Dropdown>
                         <S.Dropdown scroll={character?.stories?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem"><p>stories <br />+</p>
+                                <li className="dropItem" ><p>stories <br />+</p>
                                     <ul>
                                         {
                                             character?.stories?.items?.map((item: any) => {

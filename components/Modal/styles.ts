@@ -17,6 +17,11 @@ export const Teste = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 580px) {
+        flex-direction: column;
+        gap: 10px;
+    }
 `;
 
 export const Modal = styled.div`
@@ -125,6 +130,10 @@ export const Dropdown = styled.div<Props>`
     
     width: 20%;
 
+    @media (max-width: 580px) {
+        width: 100%;
+    }
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -151,7 +160,7 @@ export const Dropdown = styled.div<Props>`
         flex-direction: column;
         left: 0;
         width: 100%;
-        max-height: 200px;
+        max-height: 150px;
         overflow-y: ${({ scroll }) => scroll ? 'scroll' : 'none'};
         border-radius: 0px 0px 5px 5px;
         display: none;
@@ -189,15 +198,24 @@ export const Dropdown = styled.div<Props>`
         font-size: 12px;
     }
 
+    #z-index {
+        z-index: 2;
+    }
+
     .dropItem {
         border-radius: 5px;
+        /* z-index: 2; */
+
+        /* @media (max-width: 580px) {
+            z-index: 2;
+        } */
     }
 
     .dropItem:hover {
         border-radius: 5px 5px 0 0;
     }
 
-    @media (max-width: 661px) {
+    /* @media (max-width: 661px) {
         width: 24%;
-    }
+    } */
 `;
