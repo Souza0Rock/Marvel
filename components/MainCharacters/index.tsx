@@ -64,7 +64,8 @@ export default function MainCharacters () {
             <Error /> :
             <Fragment>
                 <S.DivForm>
-                    <S.LabelSearch htmlFor={"search"}>
+                    <S.LabelSearch 
+                        htmlFor={"search"}>
                         Search for your character here.
                     </S.LabelSearch>
                     <S.Input
@@ -78,13 +79,15 @@ export default function MainCharacters () {
                 <S.UlCard>
                     {characterSearchFilter && characterSearchFilter.map(character => {
                         return (
-                            <S.Card key={character?.id} 
+                            <S.Card
+                                key={character?.id} 
                                 onClick={() => {
                                     setModalOpen(true);
                                     setSelect(character)
                                 }}
                             >
-                                <img src={`${character?.thumbnail?.path}/portrait_uncanny.${character?.thumbnail?.extension}`} 
+                                <img 
+                                    src={`${character?.thumbnail?.path}/portrait_uncanny.${character?.thumbnail?.extension}`} 
                                     alt={character?.name} 
                                     id="img" 
                                 />

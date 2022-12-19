@@ -7,6 +7,20 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
 
     console.log(character, 'testando requisição');
 
+    const teste = () => {
+        window.addEventListener('resize', function () {
+            //var altura = window.innerHeight;
+            let largura = window.innerWidth;
+        
+            if (largura < 768) {
+                "portrait_medium";
+            }
+            else {
+                "standard_amazing";
+            }
+        });
+    }
+
 
     return (
         <Fragment>
@@ -37,131 +51,75 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                         }
                     </div>
                     <S.Teste>
-                    <S.Dropdown scroll={character?.comics?.items?.length > 4}>
-                        <ul>
-                            <li className="dropItem"><p>comics +</p>
-                                <ul>
-                                    {
-                                        character?.comics?.items?.map((item: any) => {
-                                            return (
-                                                <li>
-                                                    <p className="itemMap">{item?.name}</p>
-                                                </li>
-                                            )
-                                        })
-                                    }
-                                </ul>
-                            </li>
-                        </ul>
-                    </S.Dropdown>
-                    <S.Dropdown scroll={character?.events?.items?.length > 4}>
-                        <ul>
-                            <li className="dropItem"><p>events +</p>
-                                <ul>
-                                    {
-                                        character?.events?.items?.map((item: any) => {
-                                            return (
-                                                <li>
-                                                    <p className="itemMap">{item?.name}</p>
-                                                </li>
-                                            )
-                                        })
-                                    }
-                                </ul>
-                            </li>
-                        </ul>
-                    </S.Dropdown>
-                    <S.Dropdown scroll={character?.series?.items?.length > 4}>
-                        <ul>
-                            <li className="dropItem"><p>series +</p>
-                                <ul>
-                                    {
-                                        character?.series?.items?.map((item: any) => {
-                                            return (
-                                                <li>
-                                                    <p className="itemMap">{item?.name}</p>
-                                                </li>
-                                            )
-                                        })
-                                    }
-                                </ul>
-                            </li>
-                        </ul>
-                    </S.Dropdown>
-                    <S.Dropdown scroll={character?.stories?.items?.length > 4}>
-                        <ul>
-                            <li className="dropItem"><p>stories +</p>
-                                <ul>
-                                    {
-                                        character?.stories?.items?.map((item: any) => {
-                                            return (
-                                                <li>
-                                                    <p className="itemMap">{item?.name}</p>
-                                                </li>
-                                            )
-                                        })
-                                    }
-                                </ul>
-                            </li>
-                        </ul>
-                    </S.Dropdown>
+                        <S.Dropdown scroll={character?.comics?.items?.length > 4}>
+                            <ul>
+                                <li className="dropItem"><p>comics <br />+</p>
+                                    <ul>
+                                        {
+                                            character?.comics?.items?.map((item: any) => {
+                                                return (
+                                                    <li>
+                                                        <p className="itemMap">{item?.name}</p>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </S.Dropdown>
+                        <S.Dropdown scroll={character?.events?.items?.length > 4}>
+                            <ul>
+                                <li className="dropItem"><p>events <br />+</p>
+                                    <ul>
+                                        {
+                                            character?.events?.items?.map((item: any) => {
+                                                return (
+                                                    <li>
+                                                        <p className="itemMap">{item?.name}</p>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </S.Dropdown>
+                        <S.Dropdown scroll={character?.series?.items?.length > 4}>
+                            <ul>
+                                <li className="dropItem"><p>series <br />+</p>
+                                    <ul>
+                                        {
+                                            character?.series?.items?.map((item: any) => {
+                                                return (
+                                                    <li>
+                                                        <p className="itemMap">{item?.name}</p>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </S.Dropdown>
+                        <S.Dropdown scroll={character?.stories?.items?.length > 4}>
+                            <ul>
+                                <li className="dropItem"><p>stories <br />+</p>
+                                    <ul>
+                                        {
+                                            character?.stories?.items?.map((item: any) => {
+                                                return (
+                                                    <li>
+                                                        <p className="itemMap">{item?.name}</p>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
+                                </li>
+                            </ul>
+                        </S.Dropdown>
                     </S.Teste>
-                    {/* <S.Dropdown>
-                        <ul>
-                            <li className="dropItem"><p>comics +</p>
-                                <ul>
-                                {
-                                    character?.comics?.items?.map((item: any) =>{
-                                        return (
-                                            <li>
-                                                <p className="itemMap">{item?.name}</p>
-                                            </li>
-                                        )
-                                    })
-                                }
-                                </ul>
-                            </li>
-                            <li className="dropItem"><p>events +</p>
-                                <ul>
-                                {
-                                    character?.events?.items?.map((item: any) =>{
-                                        return (
-                                            <li>
-                                                <p className="itemMap">{item?.name}</p>
-                                            </li>
-                                        )
-                                    })
-                                }
-                                </ul>
-                            </li>
-                            <li className="dropItem"><p>series +</p>
-                                <ul>
-                                {
-                                    character?.series?.items?.map((item: any) =>{
-                                        return (
-                                            <li>
-                                                <p className="itemMap">{item?.name}</p>
-                                            </li>
-                                        )
-                                    })
-                                }
-                                </ul>
-                            </li>
-                            <li className="dropItem"><p>stories +</p>
-                                <ul>
-                                {
-                                    character?.stories?.items?.map((item: any) =>{
-                                        return (
-                                            <li>
-                                                <p className="itemMap">{item?.name}</p>
-                                            </li>
-                                        )
-                                    })
-                                }
-                                </ul>
-                            </li>
-                        </ul>
-                    </S.Dropdown> */}
                 </div>
             </S.Modal>
         </Fragment>

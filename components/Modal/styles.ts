@@ -14,8 +14,8 @@ export const Overlay = styled.div`
 `;
 
 export const Teste = styled.div`
-display: flex;
-width: 100%;
+    display: flex;
+    width: 100%;
 `;
 
 export const Modal = styled.div`
@@ -24,13 +24,13 @@ export const Modal = styled.div`
     color: ${({ theme }) => theme.colors.light};
     padding: 2rem;
     border-radius: 0.75rem;
-    max-width: 50vw;
+    max-width: 70vw;
     max-height: 60vh;
     position: fixed;
     top: 25%;
     bottom: 0;
     right: 0;
-    left: 25%;
+    left: 15%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -43,18 +43,48 @@ export const Modal = styled.div`
         display: flex;
         border-radius: 10px;
         background-color: ${({ theme }) => theme.colors.light};
+
+        #img {
+            max-width: 180px;
+            max-height: 180px;
+            margin: auto;
+            padding: 10px;
+        }
     }
 
     p {
         margin: auto;
-        padding: 0 5%;
+        padding: 5%;
         text-align: justify;
     }
 
     .containerFlex {
+        height: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 85vw;
+        left: 7.5%;
+    }
+
+    @media (max-width: 768px) {
+        max-width: 85vw;
+        max-height: 80vh;
+        top: 10%;
+        left: 7.5%;
+
+        .divImg {
+            min-height: 50%;
+        }
+    }
+
+    @media (max-width: 580px) {
+        .divImg {
+            flex-direction: column;
+        }
     }
 `;
 
@@ -91,7 +121,9 @@ export const CloseButton = styled.button`
 `;
 
 export const Dropdown = styled.div<Props>`
-width: 95%;
+    
+    width: 95%;
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -109,6 +141,7 @@ width: 95%;
         font-size: 20px;
         text-align: center;
         color: black;
+        /* text-transform: uppercase; */
     }
 
     ul li ul {
@@ -121,6 +154,14 @@ width: 95%;
         overflow-y: ${({ scroll }) => scroll ? 'scroll' : 'none'};
         border-radius: 0px 0px 5px 5px;
         display: none;
+    }
+
+    br {
+        display: contents;
+
+        @media (max-width: 965px) {
+            display: initial;
+        }
     }
 
     ul li:focus-within > ul,
