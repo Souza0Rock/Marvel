@@ -14,8 +14,9 @@ export const Overlay = styled.div`
 `;
 
 export const Teste = styled.div`
-    display: flex;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 `;
 
 export const Modal = styled.div`
@@ -122,7 +123,7 @@ export const CloseButton = styled.button`
 
 export const Dropdown = styled.div<Props>`
     
-    width: 95%;
+    width: 20%;
 
     ul {
         display: flex;
@@ -130,7 +131,7 @@ export const Dropdown = styled.div<Props>`
     }
 
     ul li {
-        width: 95%;
+        width: 100%;
         position: relative;
         float: left;
         background-color: ${({ theme }) => theme.colors.light};
@@ -172,6 +173,10 @@ export const Dropdown = styled.div<Props>`
     ul li ul li {
         width: 100%;   
         border-bottom: 1px solid black;
+
+        &:last-child {
+            border-radius: 0 0 5px 5px;
+        }
     }
 
     .itemMap {
