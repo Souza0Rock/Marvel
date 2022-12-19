@@ -160,7 +160,7 @@ export const Dropdown = styled.div<Props>`
     br {
         display: contents;
 
-        @media (max-width: 965px) {
+        @media (max-width: 563px) {
             display: initial;
         }
     }
@@ -173,9 +173,15 @@ export const Dropdown = styled.div<Props>`
     ul li ul li {
         width: 100%;   
         border-bottom: 1px solid black;
+        border-top: 1px solid black;
+
+        &:nth-child(n + 2) {
+            border-top: none;
+        }
 
         &:last-child {
             border-radius: 0 0 5px 5px;
+            /* border: none; */
         }
     }
 
@@ -189,5 +195,9 @@ export const Dropdown = styled.div<Props>`
 
     .dropItem:hover {
         border-radius: 5px 5px 0 0;
+    }
+
+    @media (max-width: 661px) {
+        width: 24%;
     }
 `;
