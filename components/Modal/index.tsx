@@ -49,7 +49,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                         {
                                             character?.comics?.items?.map((item: any) => {
                                                 return (
-                                                    <li>
+                                                    <li key={item}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )
@@ -66,7 +66,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                         {
                                             character?.events?.items?.map((item: any) => {
                                                 return (
-                                                    <li>
+                                                    <li key={item}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )
@@ -83,7 +83,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                         {
                                             character?.series?.items?.map((item: any) => {
                                                 return (
-                                                    <li>
+                                                    <li key={item}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )
@@ -100,7 +100,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                         {
                                             character?.stories?.items?.map((item: any) => {
                                                 return (
-                                                    <li>
+                                                    <li key={item}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )

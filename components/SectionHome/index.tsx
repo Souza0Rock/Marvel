@@ -28,7 +28,7 @@ import * as S from "./style"
                         </S.Li>
                     </S.Ul>
                 </nav> */}
-                <S.Alert>Site still under development, open the menu in the sidebar and click on "characters", or type in the url "http://localhost:3000/Characters".</S.Alert>
+                <S.Alert>Site still under development, open the menu in the sidebar and click on &quot;characters&quot;, or type in the url &quot;http://localhost:3000/Characters&quot;.</S.Alert>
             </S.Section>
         )
     }
