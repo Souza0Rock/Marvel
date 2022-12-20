@@ -60,7 +60,8 @@ export const Modal = styled.div`
 
     p {
         margin: auto;
-        padding: 5%;
+        padding: 3%;
+        font-size: 15px;
         text-align: justify;
     }
 
@@ -177,6 +178,7 @@ export const Dropdown = styled.div<Props>`
     ul li:focus-within > ul,
     ul li:hover > ul {
         display: initial;
+        z-index: 2;
     }
 
     ul li ul li {
@@ -198,13 +200,8 @@ export const Dropdown = styled.div<Props>`
         font-size: 12px;
     }
 
-    #z-index {
-        z-index: 2;
-    }
-
     .dropItem {
         border-radius: 5px;
-        /* z-index: 2; */
 
         /* @media (max-width: 580px) {
             z-index: 2;
