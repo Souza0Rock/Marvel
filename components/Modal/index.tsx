@@ -39,7 +39,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                 <li className="dropItem"><p>comics +</p>
                                     <ul>
                                         {character?.comics?.items.length === 0 ? 
-                                            (<p>Not found</p>) : 
+                                            (<li><p>Not found</p></li>) : 
                                             character?.comics?.items?.map((item: any, index : number) => {
                                                 return (
                                                     <li key={index}>
@@ -57,7 +57,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                 <li className="dropItem"><p>events +</p>
                                     <ul>
                                         {character?.events?.items.length === 0 ? 
-                                            (<p>Not found</p>) : 
+                                            (<li><p>Not found</p></li>) : 
                                             character?.events?.items?.map((item: any, index : number) => {
                                                 return (
                                                     <li key={index}>
@@ -75,7 +75,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                 <li className="dropItem"><p>series +</p>
                                     <ul>
                                         {character?.series?.items.length === 0 ? 
-                                            (<p>Not found</p>) : 
+                                            (<li><p>Not found</p></li>) : 
                                             character?.series?.items?.map((item: any, index : number) => {
                                                 return (
                                                     <li key={index}>
@@ -93,7 +93,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                 <li className="dropItem"><p>stories +</p>
                                     <ul>
                                         {character?.stories?.items.length === 0 ? 
-                                            (<p>Not found</p>) : 
+                                            (<li><p>Not found</p></li>) : 
                                             character?.stories?.items?.map((item: any, index : number) => {
                                                 return (
                                                     <li key={index}>
