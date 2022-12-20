@@ -4,15 +4,7 @@ import * as S from './styles'
 export default function Modal({ isOpen, setIsOpen, closeButton = true, character }: any) {
 
     if (!isOpen) return null;
-
-    console.log(character, 'testando requisição');
-
     
-    const teste = () => {
-        document.getElementById("z-index")
-    }
-
-
     return (
         <Fragment>
             <S.Overlay
@@ -44,12 +36,13 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                     <S.Teste>
                         <S.Dropdown scroll={character?.comics?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem" onClick={() => {teste}} ><p>comics <br />+</p>
+                                <li className="dropItem"><p>comics +</p>
                                     <ul>
-                                        {
-                                            character?.comics?.items?.map((item: any) => {
+                                        {character?.comics?.items.length === 0 ? 
+                                            (<p>Not found</p>) : 
+                                            character?.comics?.items?.map((item: any, index : number) => {
                                                 return (
-                                                    <li key={item}>
+                                                    <li key={index}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )
@@ -61,12 +54,13 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                         </S.Dropdown>
                         <S.Dropdown scroll={character?.events?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem"><p>events <br />+</p>
+                                <li className="dropItem"><p>events +</p>
                                     <ul>
-                                        {
-                                            character?.events?.items?.map((item: any) => {
+                                        {character?.events?.items.length === 0 ? 
+                                            (<p>Not found</p>) : 
+                                            character?.events?.items?.map((item: any, index : number) => {
                                                 return (
-                                                    <li key={item}>
+                                                    <li key={index}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )
@@ -78,12 +72,13 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                         </S.Dropdown>
                         <S.Dropdown scroll={character?.series?.items?.length > 4}>
                             <ul>
-                                <li className="dropItem"><p>series <br />+</p>
+                                <li className="dropItem"><p>series +</p>
                                     <ul>
-                                        {
-                                            character?.series?.items?.map((item: any) => {
+                                        {character?.series?.items.length === 0 ? 
+                                            (<p>Not found</p>) : 
+                                            character?.series?.items?.map((item: any, index : number) => {
                                                 return (
-                                                    <li key={item}>
+                                                    <li key={index}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )
@@ -93,14 +88,15 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                 </li>
                             </ul>
                         </S.Dropdown>
-                        <S.Dropdown scroll={character?.stories?.items?.length > 4}>
+                        <S.Dropdown scroll={character?.stories?.items?.length > 4}>                            
                             <ul>
-                                <li className="dropItem" ><p>stories <br />+</p>
+                                <li className="dropItem"><p>stories +</p>
                                     <ul>
-                                        {
-                                            character?.stories?.items?.map((item: any) => {
+                                        {character?.stories?.items.length === 0 ? 
+                                            (<p>Not found</p>) : 
+                                            character?.stories?.items?.map((item: any, index : number) => {
                                                 return (
-                                                    <li key={item}>
+                                                    <li key={index}>
                                                         <p className="itemMap">{item?.name}</p>
                                                     </li>
                                                 )

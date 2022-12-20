@@ -8,13 +8,26 @@ const privateKey = '8e7fd902aaed64859d0bc821596621aea13cc140';
 
 const hash = md5(ts + privateKey + publicKey);
 
+let teste = "setNameStartsWith"
+
+const condicional = (teste: any) => {
+    switch(teste) {
+        case true :  "nameStartsWith"
+        default: null
+    }
+}
+
 const Api = axios.create ({
     baseURL: 'http://gateway.marvel.com/v1/public/',
     params: {
+        // nameStartsWith: condicional,
         ts,
         apikey: publicKey,
         hash,
     },
 });
+
+
+
 
 export default Api;

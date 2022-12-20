@@ -70,18 +70,28 @@ export const Card = styled.li `
     p {
         padding: 12px;
         text-align: justify;
+
+        @media (max-width: 1024px) {
+            display: none;
+        }
     }
 
     #img {
         height: 90%;
         width: 100%;
         transition: all 1s;
+
+        @media (max-width: 1024px) {
+            height: 84%;
+        }
     }
 
-    &:hover {
-        #img {
-            height: 200px;
-            object-fit: cover;
+    @media (min-width: 1024px) {
+        &:hover {
+            #img {
+                height: 200px;
+                object-fit: cover;
+            }
         }
     }
 `;

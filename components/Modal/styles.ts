@@ -53,8 +53,12 @@ export const Modal = styled.div`
         #img {
             max-width: 180px;
             max-height: 180px;
-            margin: auto;
+            margin: auto 0;
             padding: 10px;
+
+            @media (max-width: 768px) {
+                margin: auto;
+            }
         }
     }
 
@@ -79,8 +83,9 @@ export const Modal = styled.div`
 
     @media (max-width: 768px) {
         max-width: 85vw;
-        max-height: 80vh;
-        top: 10%;
+        max-height: 92vh;
+        padding: 1rem;
+        top: 4%;
         left: 7.5%;
 
         .divImg {
@@ -125,6 +130,10 @@ export const CloseButton = styled.button`
     &::after {
         transform: rotate(-45deg);
     }
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.red_marvel};
+    }
 `;
 
 export const Dropdown = styled.div<Props>`
@@ -152,7 +161,13 @@ export const Dropdown = styled.div<Props>`
         font-size: 20px;
         text-align: center;
         color: black;
-        /* text-transform: uppercase; */
+
+        @media (max-width: 768px) {
+            padding: 4px;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     }
 
     ul li ul {
@@ -165,14 +180,18 @@ export const Dropdown = styled.div<Props>`
         overflow-y: ${({ scroll }) => scroll ? 'scroll' : 'none'};
         border-radius: 0px 0px 5px 5px;
         display: none;
+
+        @media (max-width: 768px) {
+            max-height: 100px;
+        }
     }
 
     br {
         display: contents;
 
-        @media (max-width: 563px) {
+        /* @media (max-width: 563px) {
             display: initial;
-        }
+        } */
     }
 
     ul li:focus-within > ul,
@@ -198,14 +217,16 @@ export const Dropdown = styled.div<Props>`
 
     .itemMap {
         font-size: 12px;
+        font-weight: initial;
     }
 
     .dropItem {
+        max-height: 43px;
         border-radius: 5px;
 
-        /* @media (max-width: 580px) {
-            z-index: 2;
-        } */
+        @media (max-width: 768px) {
+            height: 1.5rem;
+        }
     }
 
     .dropItem:hover {

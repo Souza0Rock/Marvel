@@ -18,7 +18,7 @@ export const Container = styled.header `
         @media (max-width: 480px) {
         width: 50px;
         height: 50px;
-        margin: 3rem 0;
+        margin-top: 1.5rem;
         align-self: baseline;
         }
     }

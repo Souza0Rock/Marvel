@@ -14,7 +14,7 @@ interface ResponseData {
     };
 }
 
-export default function MainCharacters () {
+export default function MainCharacters () {    
     
     const [character, setCharacter] = useState<ResponseData[]>([]);
 
