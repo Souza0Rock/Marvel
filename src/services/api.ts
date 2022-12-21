@@ -14,7 +14,7 @@ const Api = axios.create ({
         ts,
         apikey: publicKey,
         hash,
-    },
+    }
 });
 
 export default Api;
