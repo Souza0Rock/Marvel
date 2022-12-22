@@ -22,8 +22,8 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                     {character?.name}
                 </h1>
                 <div className="containerFlex">
-                    <div className="divImg">
-                        <img
+                    <S.DivImg>
+                        <S.Img
                             src={`${character?.thumbnail?.path}/standard_amazing.${character?.thumbnail?.extension}`}
                             alt={character?.name}
                             id="img"
@@ -32,8 +32,8 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                             <p>{character?.description}</p> :
                             <p>Description not provided.</p>
                         }
-                    </div>
-                    <S.Teste>
+                    </S.DivImg>
+                    <S.Container>
                         <S.Dropdown scroll={character?.comics?.items?.length > 4}>
                             <ul>
                                 <li className="dropItem"><p>comics +</p>
@@ -106,7 +106,7 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                 </li>
                             </ul>
                         </S.Dropdown>
-                    </S.Teste>
+                    </S.Container>
                 </div>
             </S.Modal>
         </Fragment>
