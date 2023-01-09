@@ -1,58 +1,62 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import * as S from './styles'
 
 export default function Modal({ isOpen, setIsOpen, closeButton = true, character }: any) {
 
-    if (!isOpen) return null;
-    
-    return (
-        <Fragment>
-            <S.Overlay
-                onClick={() => {
-                    setIsOpen(false)
-                }}
+  if (!isOpen) return null;
+  const [showDropdown, setShowDropdown] = useState(false)
+
+  return (
+    <Fragment>
+      <S.Overlay
+        onClick={() => {
+          setIsOpen(false)
+        }}
+      />
+      <S.Modal>
+        {closeButton ? <S.CloseButton type="button"
+          onClick={() => {
+            setIsOpen(false)
+          }}
+        /> : null}
+        <h1>
+          {character?.name}
+        </h1>
+        <div className="containerFlex">
+          <S.DivImg>
+            <S.Img
+              src={`${character?.thumbnail?.path}/standard_amazing.${character?.thumbnail?.extension}`}
+              alt={character?.name}
+              id="img"
             />
-            <S.Modal>
-                {closeButton ? <S.CloseButton type="button"
-                    onClick={() => {
-                        setIsOpen(false)
-                    }}
-                /> : null}
-                <h1>
-                    {character?.name}
-                </h1>
-                <div className="containerFlex">
-                    <S.DivImg>
-                        <S.Img
-                            src={`${character?.thumbnail?.path}/standard_amazing.${character?.thumbnail?.extension}`}
-                            alt={character?.name}
-                            id="img"
-                        />
-                        {character?.description ?
-                            <p>{character?.description}</p> :
-                            <p>Description not provided.</p>
-                        }
-                    </S.DivImg>
-                    <S.Container>
-                        <S.Dropdown scroll={character?.comics?.items?.length > 4}>
-                            <ul>
-                                <li className="dropItem"><p>comics +</p>
-                                    <ul>
-                                        {character?.comics?.items.length === 0 ? 
-                                            (<li><p>Not found</p></li>) : 
-                                            character?.comics?.items?.map((item: any, index : number) => {
-                                                return (
-                                                    <li key={index}>
-                                                        <p className="itemMap">{item?.name}</p>
-                                                    </li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
-                                </li>
-                            </ul>
-                        </S.Dropdown>
-                        <S.Dropdown scroll={character?.events?.items?.length > 4}>
+            {character?.description ?
+              <p>{character?.description}</p> :
+              <p>Description not provided.</p>
+            }
+          </S.DivImg>
+          <S.Container>
+            <S.Dropdown scroll={character?.comics?.items?.length > 4}>
+              <li className="teste"
+                onMouseEnter={() => setShowDropdown()}
+                onMouseLeave={() => setShowDropdown(false)}>
+                comics +
+              </li>
+              {showDropdown &&
+                <>
+                  {character?.comics?.items.length === 0 ?
+                  <li><p>Not found</p></li> :
+                  character?.comics?.items?.map((item: any, index: number) => {
+                    return (
+                      <li key={index}>
+                        <p>{item?.name}</p>
+                      </li>
+                    )
+                  })
+                  }
+                </>
+              }
+            </S.Dropdown>
+            {/* <S.Dropdown scroll={character?.events?.items?.length > 4}>
                             <ul>
                                 <li className="dropItem"><p>events +</p>
                                     <ul>
@@ -105,10 +109,10 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                                     </ul>
                                 </li>
                             </ul>
-                        </S.Dropdown>
-                    </S.Container>
-                </div>
-            </S.Modal>
-        </Fragment>
-    );
+                        </S.Dropdown> */}
+          </S.Container>
+        </div>
+      </S.Modal>
+    </Fragment>
+  );
 }
