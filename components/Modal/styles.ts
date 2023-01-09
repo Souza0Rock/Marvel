@@ -53,97 +53,13 @@ export const Modal = styled.div `
     }
 `;
 
-
 export const Dropdown = styled.div<Props> `
-    
-    width: 20%;
-    
-    @media (max-width: 580px) {
-        width: 100%;
-    }
-    
-    ul {
-        display: flex;
-        justify-content: space-between;
-    }
+  width: 20%;
 
-    ul li {
-        width: 100%;
-        position: relative;
-        float: left;
-        background-color: ${({ theme }) => theme.colors.light};
-    }
-
-    ul li p {
-        padding: 10px;
-        font-size: 20px;
-        text-align: center;
-        color: black;
-        
-        @media (max-width: 768px) {
-            padding: 4px;
-            font-size: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-    }
-    
-    ul li ul {
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        left: 0;
-        width: 100%;
-        max-height: 150px;
-        overflow-y: ${({ scroll }) => scroll ? 'scroll' : 'none'};
-        border-radius: 0px 0px 5px 5px;
-        display: none;
-        
-        @media (max-width: 768px) {
-            max-height: 100px;
-        }
-    }
-    
-    ul li:focus-within > ul,
-    ul li:hover > ul {
-        display: initial;
-        z-index: 2;
-    }
-    
-    ul li ul li {
-        width: 100%;   
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-        
-        &:nth-child(n + 2) {
-            border-top: none;
-        }
-        
-        &:last-child {
-            border-radius: 0 0 5px 5px;
-        }
-    }
-    
-    .itemMap {
-        font-size: 12px;
-        font-weight: initial;
-    }
-    
-    .dropItem {
-        max-height: 43px;
-        border-radius: 5px;
-        
-        @media (max-width: 768px) {
-            height: 1.5rem;
-        }
-    }
-    
-    .dropItem:hover {
-        border-radius: 5px 5px 0 0;
-    }
-    `;
-
-export const DropItem = styled.li
+  .teste {
+    transition: 1s;
+  }
+`;
 
 export const DivImg = styled.div `
     display: flex;

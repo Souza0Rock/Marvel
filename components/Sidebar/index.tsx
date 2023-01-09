@@ -14,7 +14,7 @@ const Sidebar = ({ active }:any) => {
             <FaTimes onClick={closeSidebar} />
             <S.DisplayFlex>
                 <S.Content>
-                    <Link href={'/Characters'}>
+                    <Link href={'/characters'}>
                         <S.SidebarItem >
                             <S.Icon src='/images/reactor.png'  />
                             characters
