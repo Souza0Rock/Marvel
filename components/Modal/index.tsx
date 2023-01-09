@@ -36,80 +36,80 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
           </S.DivImg>
           <S.Container>
             <S.Dropdown scroll={character?.comics?.items?.length > 4}>
-              <li className="teste"
-                onMouseEnter={() => setShowDropdown()}
+              <h2 className="teste"
+                onMouseEnter={() => setShowDropdown(true)}
                 onMouseLeave={() => setShowDropdown(false)}>
                 comics +
-              </li>
+              </h2>
               {showDropdown &&
-                <>
+                <ul>
                   {character?.comics?.items.length === 0 ?
-                  <li><p>Not found</p></li> :
-                  character?.comics?.items?.map((item: any, index: number) => {
-                    return (
-                      <li key={index}>
-                        <p>{item?.name}</p>
-                      </li>
-                    )
-                  })
+                    <li>Not found</li> :
+                    character?.comics?.items?.map((item: any, index: number) => {
+                      return (
+                        <li key={index}>
+                          {item?.name}
+                        </li>
+                      )
+                    })
                   }
-                </>
+                </ul>
               }
             </S.Dropdown>
-            {/* <S.Dropdown scroll={character?.events?.items?.length > 4}>
-                            <ul>
-                                <li className="dropItem"><p>events +</p>
-                                    <ul>
-                                        {character?.events?.items.length === 0 ? 
-                                            (<li><p>Not found</p></li>) : 
-                                            character?.events?.items?.map((item: any, index : number) => {
-                                                return (
-                                                    <li key={index}>
-                                                        <p className="itemMap">{item?.name}</p>
-                                                    </li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
-                                </li>
-                            </ul>
-                        </S.Dropdown>
-                        <S.Dropdown scroll={character?.series?.items?.length > 4}>
-                            <ul>
-                                <li className="dropItem"><p>series +</p>
-                                    <ul>
-                                        {character?.series?.items.length === 0 ? 
-                                            (<li><p>Not found</p></li>) : 
-                                            character?.series?.items?.map((item: any, index : number) => {
-                                                return (
-                                                    <li key={index}>
-                                                        <p className="itemMap">{item?.name}</p>
-                                                    </li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
-                                </li>
-                            </ul>
-                        </S.Dropdown>
-                        <S.Dropdown scroll={character?.stories?.items?.length > 4}>                            
-                            <ul>
-                                <li className="dropItem"><p>stories +</p>
-                                    <ul>
-                                        {character?.stories?.items.length === 0 ? 
-                                            (<li><p>Not found</p></li>) : 
-                                            character?.stories?.items?.map((item: any, index : number) => {
-                                                return (
-                                                    <li key={index}>
-                                                        <p className="itemMap">{item?.name}</p>
-                                                    </li>
-                                                )
-                                            })
-                                        }
-                                    </ul>
-                                </li>
-                            </ul>
-                        </S.Dropdown> */}
+              {/* <S.Dropdown scroll={character?.events?.items?.length > 4}>
+                <ul>
+                  <li className="dropItem"><p>events +</p>
+                      <ul>
+                          {character?.events?.items.length === 0 ? 
+                              (<li><p>Not found</p></li>) : 
+                              character?.events?.items?.map((item: any, index : number) => {
+                                  return (
+                                      <li key={index}>
+                                          <p className="itemMap">{item?.name}</p>
+                                      </li>
+                                  )
+                              })
+                          }
+                      </ul>
+                  </li>
+              </ul>
+            </S.Dropdown>
+            <S.Dropdown scroll={character?.series?.items?.length > 4}>
+                <ul>
+                    <li className="dropItem"><p>series +</p>
+                        <ul>
+                            {character?.series?.items.length === 0 ? 
+                                (<li><p>Not found</p></li>) : 
+                                character?.series?.items?.map((item: any, index : number) => {
+                                    return (
+                                        <li key={index}>
+                                            <p className="itemMap">{item?.name}</p>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </S.Dropdown>
+            <S.Dropdown scroll={character?.stories?.items?.length > 4}>                            
+                <ul>
+                    <li className="dropItem"><p>stories +</p>
+                        <ul>
+                            {character?.stories?.items.length === 0 ? 
+                                (<li><p>Not found</p></li>) : 
+                                character?.stories?.items?.map((item: any, index : number) => {
+                                    return (
+                                        <li key={index}>
+                                            <p className="itemMap">{item?.name}</p>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            </S.Dropdown> */}
           </S.Container>
         </div>
       </S.Modal>
