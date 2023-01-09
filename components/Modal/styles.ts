@@ -55,11 +55,9 @@ export const Modal = styled.div `
 
 export const Dropdown = styled.div<Props> `
   width: 20%;
-
-  .teste {
-    transition: 1s;
-  }
 `;
+
+export const DropItem = styled.ul ``;
 
 export const DivImg = styled.div `
     display: flex;
