@@ -4,7 +4,7 @@ import * as S from './styles'
 export default function Modal({ isOpen, setIsOpen, closeButton = true, character }: any) {
 
   if (!isOpen) return null;
-  const [showDropdown, setShowDropdown] = useState(false)
+  const [showDropdown, setShowDropdown] = useState(true)
 
   return (
     <Fragment>
@@ -35,10 +35,12 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
             }
           </S.DivImg>
           <S.Container>
-            <S.Dropdown scroll={character?.comics?.items?.length > 4}>
-              <h2 className="teste"
+            <S.Dropdown 
+              scroll={character?.comics?.items?.length > 4}>
+              <h2
                 onMouseEnter={() => setShowDropdown(true)}
-                onMouseLeave={() => setShowDropdown(false)}>
+                // onMouseLeave={() => setShowDropdown(false)}
+                >
                 comics +
               </h2>
               {showDropdown &&
@@ -47,9 +49,9 @@ export default function Modal({ isOpen, setIsOpen, closeButton = true, character
                     <li>Not found</li> :
                     character?.comics?.items?.map((item: any, index: number) => {
                       return (
-                        <li key={index}>
+                        <S.DropItem key={index}>
                           {item?.name}
-                        </li>
+                        </S.DropItem>
                       )
                     })
                   }
